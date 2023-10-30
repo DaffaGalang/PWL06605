@@ -43,6 +43,7 @@
 	//     $halAktif = $_GET['hal'];
 	// } else {
 	//     $halAktif = 1;
+	// tess cuy
 	// }
 
 	// $awalData = ($jmlDataPerHal * $halAktif) - $jmlDataPerHal;
