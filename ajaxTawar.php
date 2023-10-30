@@ -1,14 +1,12 @@
 <?php
-    require "fungsi.php";
-
-    $mk = $_POST['mk'];
-    $kodemk = search('matkul','id='.$mk);
-    $datamk = mysqli_fetch_object($kodemk);
-    $kodeprogdi = substr($datamk->idmatkul,0,3);
-    $rs = search('dosen',"homebase='".$kodeprogdi."'");
-    $option = "";
-    while($data = mysqli_fetch_object($rs))
-    {
-        $option.='<option value="'.$data->npp.'">'.$data->namadosen.'</option>';
-    }
-    echo $option;
+require "fungsi.php";
+$id = $_POST["id"];
+$homebase = explode(".", $id)[0];
+$hasil = search("dosen", "homebase='$homebase'");
+?>
+<option value='' disabled selected>Pilih Dosen</option>
+<?php
+while ($row = mysqli_fetch_assoc($hasil)) {
+?>
+    <option value=<?= $row["npp"]; ?>><?= $row["namadosen"] ?></option>
+<?php } ?>
