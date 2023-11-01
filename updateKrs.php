@@ -47,8 +47,12 @@
 	// }
 
 	// $awalData = ($jmlDataPerHal * $halAktif) - $jmlDataPerHal;
-
-	$sql = "select * from krs a JOIN matkul b ON (a.idMatkul = b.idmatkul) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim)";
+	if (isset($_POST['cari'])) {
+		$cari = $_POST['cari'];
+		$sql = "select * from krs a JOIN matkul b ON (a.idMatkul = b.idmatkul) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim) where thAkd like '%$cari%' or namamatkul like '%$cari%' or nama like '%$cari%'";
+	} else {
+		$sql = "select * from krs a JOIN matkul b ON (a.idMatkul = b.idmatkul) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim)";
+	}
 	$hasil = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 	$kosong = false;
 	if (mysqli_num_rows($hasil) == 0) {
