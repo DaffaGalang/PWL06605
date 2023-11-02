@@ -107,11 +107,11 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary" value="Simpan">Simpan</button>
-                </div>
             </div>
         </form>
+        <div>
+            <button type="submit" class="btn btn-primary" value="Simpan">Simpan</button>
+        </div>
     </div>
     <script>
 	// $(document).ready(function() {

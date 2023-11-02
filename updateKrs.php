@@ -70,7 +70,7 @@
 		<span class="float-right">
 			<form action="" method="post" class="form-inline">
 				<button class="btn btn-success" type="submit">Cari</button>
-				<input class="form-control mr-2 ml-2" type="text" name="cari" placeholder="cari data dosen..." autocomplete="off">
+				<input class="form-control mr-2 ml-2" type="text" name="cari" placeholder="cari data krs..." autocomplete="off">
 			</form>
 		</span>
 		</span>
@@ -146,7 +146,7 @@
                             <td style="text-align: center"><?php echo $row["waktu"] ?></td>
 							<td>
 								<a class="btn btn-outline-primary btn-sm" href="editKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>">Edit</a>
-								<a class="btn btn-outline-danger btn-sm" href="hpsKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>" id="linkHps" onclick="return confirm('Yakin dihapus nih?')">Hapus</a>
+								<a class="btn btn-outline-danger btn-sm" href="hpsKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>" id="linkHps" onclick="return confirm('Yakin Mau Dihapus?')">Hapus</a>
 							</td>
 						</tr>
 				<?php
