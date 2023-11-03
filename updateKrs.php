@@ -106,14 +106,10 @@
 		<table class="table table-hover">
 			<thead class="thead-light">
 				<tr>
-					<th>No.</th>
-					<th>Tahun Akdemik</th>
-					<th>Mahasiswa</th>
-					<th style="text-align: center">Nama Matkul</th>
-					<th style="text-align: center">Nilai</th>
-					<th style="text-align: center">Dosen</th>
-					<th style="text-align: center">Hari</th>
-                    <th style="text-align: center">waktu</th>
+					<th>ID.</th>
+					<th>NIM Mahasiswa</th>
+					<th>Jadwal</th>
+					<th style="text-align: center">SKS</th>
 					<th>Aksi</th>
 				</tr>
 			</thead>
@@ -137,13 +133,9 @@
 					?>
 						<tr>
 							<td><?php echo $no ?></td>
-							<td style="text-align: left"><?php echo $row["thAkd"] ?></td>
-							<td style="text-align: left"><?php echo $row["nama"] ?></td>
-							<td style="text-align: center"><?php echo $row["namamatkul"] ?></td>
-							<td style="text-align: center"><?php echo $row["nilai"] ?></td>
-							<td style="text-align: center"><?php echo $row["namadosen"] ?></td>
-							<td style="text-align: center"><?php echo $row["hari"] ?></td>
-                            <td style="text-align: center"><?php echo $row["waktu"] ?></td>
+							<td style="text-align: left"><?php echo $row["nim"] ?></td>
+							<td style="text-align: center"><?php echo $row["waktu"] ?></td>
+							<td style="text-align: center"><?php echo $row["sks"] ?></td>
 							<td>
 								<a class="btn btn-outline-primary btn-sm" href="editKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>">Edit</a>
 								<a class="btn btn-outline-danger btn-sm" href="hpsKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>" id="linkHps" onclick="return confirm('Yakin Mau Dihapus?')">Hapus</a>
