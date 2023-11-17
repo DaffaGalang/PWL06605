@@ -49,9 +49,9 @@
 	// $awalData = ($jmlDataPerHal * $halAktif) - $jmlDataPerHal;
 	if (isset($_POST['cari'])) {
 		$cari = $_POST['cari'];
-		$sql = "select * from krs a JOIN matkul b ON (a.idMatkul = b.idmatkul) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim) where thAkd like '%$cari%' or namamatkul like '%$cari%' or nama like '%$cari%'";
+		$sql = "select * from krs a JOIN nim b ON (a.nim = b.nim) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim) where thAkd like '%$cari%' or namamatkul like '%$cari%' or nama like '%$cari%'";
 	} else {
-		$sql = "select * from krs a JOIN matkul b ON (a.idMatkul = b.idmatkul) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim)";
+		$sql = "select * from krs a JOIN nim b ON (a.nim = b.nim) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim)";
 	}
 	$hasil = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 	$kosong = false;
