@@ -36,15 +36,15 @@
                                 <option value=<?= $row["nim"]; ?>><?= $row["nama"] ?></option>
                             <?php } ?>
                         </select>
-                    </div>         
+                    </div>
                 </div>
                 <div class="row">
                     <div class="form-group mb-3 col-12">
-                        <label for="idMatkul">Mata Kuliah:</label>
+                        <label for="idMatkul">Mata Kuliah & Jadwal:</label>
                         <div id="baba"></div>
                         <div>
                             <select id="" class="form-select px-2 mr-3" name="idMatkul" style="height: 40px;width: 100%; border :1px solid #ced4da;border-radius: 0.25rem;" required>
-                                <option value='' disabled selected>Pilih Matkul</option>
+                                <option value='' disabled selected>Pilih Matkul & Jadwal</option>
                             </select>
                         </div>
                     </div>
@@ -56,31 +56,31 @@
         </div>
     </div>
     <script>
-	// $(document).ready(function() {
-	// 		$('#mhs').change(function() {
-	// 			var mk = $(this).val();
-    //             $.post("ajaxKrsmatkul.php", {
-	// 				id: mk
-	// 			}, function(data) {
-	// 				if (data != "") {
-	// 					$("#matkultest").html(data);
-	// 				}
-	// 			})
-	// 			$.post("ajaxKrsdosen.php", {
-	// 				id: mk
-	// 			}, function(data) {
-	// 				if (data != "") {
-	// 					$("#dosen").html(data);
-	// 				}
-	// 			})
-                
-	// 		})
-	// 	})
-   $(document).ready(function() {
-		$('#mhs').on("change", function() {
-			$('#baba').load('ajaxKrsMatkul.php?id=' + $('#mhs').val())
-		})
-	})
+        // $(document).ready(function() {
+        // 		$('#mhs').change(function() {
+        // 			var mk = $(this).val();
+        //             $.post("ajaxKrsmatkul.php", {
+        // 				id: mk
+        // 			}, function(data) {
+        // 				if (data != "") {
+        // 					$("#matkultest").html(data);
+        // 				}
+        // 			})
+        // 			$.post("ajaxKrsdosen.php", {
+        // 				id: mk
+        // 			}, function(data) {
+        // 				if (data != "") {
+        // 					$("#dosen").html(data);
+        // 				}
+        // 			})
+
+        // 		})
+        // 	})
+        $(document).ready(function() {
+            $('#mhs').on("change", function() {
+                $('#baba').load('ajaxKrsMatkul.php?id=' + $('#mhs').val())
+            })
+        })
         $(document).ready(function() {
             $("#mhs").change(function() {
                 var mk = $(this).val()
