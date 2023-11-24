@@ -1,7 +1,8 @@
 <?php
 require "fungsi.php";
 
-$rs = search('kultawar', 'idmatkul=' . $_POST['mk']);
+$sql = "SELECT * FROM kultawar WHERE idmatkul=" . $_POST['mk'];
+$rs = mysqli_query($koneksi, $sql);
 if (mysqli_num_rows($rs) == 0) {
     echo "Mata kuliah tidak ditawarkan";
 } else {
@@ -31,7 +32,7 @@ if (mysqli_num_rows($rs) == 0) {
                 <td><?php echo $datadosen->namadosen ?></td>
                 <td><?php echo $data->hari, " ", $data->jamkul ?></td>
                 <td><?php echo $datamatkul->sks ?></td>
-                <td>Pilih</td>
+                <td> <input type="radio" name="pilih" value="<?php echo $data->idkultawar, '-', $datamatkul->sks ?>"></td>
             </tr>
         <?php
             $i++;
@@ -39,5 +40,6 @@ if (mysqli_num_rows($rs) == 0) {
 
         ?>
     </table>
+    <input type="submit" value="Simpan" class="btn btn-primary">
 <?php
 }

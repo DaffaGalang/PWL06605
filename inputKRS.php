@@ -39,7 +39,8 @@
     <br>
     <div class="utama">
         <h3>Input KRS <? echo $_GET['nim'] ?></h3>
-        <form action="" method="post">
+        <form action="sv_krs" method="post">
+            <input type="hidden" name="nim" value="<?php echo $_GET['nim'] ?>">
             <div class="form-group">
                 <label for="matakuliah">Mata Kuliah</label>
                 <select name="matakuliah" id="matkul" class="form-control">
@@ -47,13 +48,14 @@
                     <?php
                     while ($data = mysqli_fetch_object($rs)) {
                     ?>
-                        <option value="<?php echo $data->id ?>"><?php echo $data->namamatkul ?></option>
+                        <option value="<?php echo $data->id ?>"><?php echo $data->idmatkul, " - ", $data->namamatkul ?></option>
                     <?php
                     }
                     ?>
                 </select>
             </div>
             <div id="tabelmatkul"></div>
+            <input type="submit" value="">
         </form>
 
     </div>
