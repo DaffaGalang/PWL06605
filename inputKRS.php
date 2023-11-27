@@ -39,7 +39,7 @@
     <br>
     <div class="utama">
         <h3>Input KRS <? echo $_GET['nim'] ?></h3>
-        <form action="sv_krs" method="post">
+        <form action="sv_krs.php" method="post">
             <input type="hidden" name="nim" value="<?php echo $_GET['nim'] ?>">
             <div class="form-group">
                 <label for="matakuliah">Mata Kuliah</label>
@@ -55,7 +55,7 @@
                 </select>
             </div>
             <div id="tabelmatkul"></div>
-            <input type="submit" value="">
+            <!-- <input type="submit" value=""> -->
         </form>
 
     </div>

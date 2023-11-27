@@ -48,7 +48,7 @@
 
 	// $awalData = ($jmlDataPerHal * $halAktif) - $jmlDataPerHal;
 
-	$sql = "select * from matkul a JOIN kultawar b ON (a.idmatkul = b.idmatkul) JOIN dosen c ON (c.npp=b.npp)";
+	$sql = "select * from matkul a JOIN kultawar b ON (a.id = b.idmatkul) JOIN dosen c ON (c.npp=b.npp)";
 	$hasil = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 	$kosong = false;
 	if (mysqli_num_rows($hasil) == 0) {

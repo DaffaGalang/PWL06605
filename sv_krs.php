@@ -1,4 +1,4 @@
-<?
+<?php
 require "fungsi.php";
 $nim = $_POST['nim'];
 $pilih = explode("-", $_POST['pilih']); //1-3, 10-3
@@ -10,4 +10,4 @@ $sks = $pilih[1];
 
 $sql = "INSERT INTO krs (nim,id_jadwal,sks) VALUES ('" . $nim . "','" . $idkultawar . "','" . $sks . "')";
 mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
-header('location: input.php?nim=' . $nim);
+header('location: inputKRS.php?nim=' . $nim);
