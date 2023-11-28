@@ -38,7 +38,7 @@
     ?>
     <br>
     <div class="utama">
-        <h3>Input KRS <? echo $_GET['nim'] ?></h3>
+        <h3>Input KRS <?php echo $_GET['nim'] ?></h3>
         <form action="sv_krs.php" method="post">
             <input type="hidden" name="nim" value="<?php echo $_GET['nim'] ?>">
             <div class="form-group">
@@ -74,12 +74,18 @@
             while ($data = mysqli_fetch_assoc($hasil2)) {
                 ?>
                      <tr>
-                        <td><?php echo $data['id'] ?></td>
+                        <td><?php echo $data['id_krs'] ?></td>
                         <td><?php echo $data['idmatkul'] ?></td>
                         <td><?php echo $data['namamatkul'] ?></td>
                         <td><?php echo $data['namadosen'] ?></td>
                         <td><?php echo $data['hari'], " ", $data['jamkul'] ?></td>
                         <td><?php echo $data['sks'] ?></td>
+                        <td> <a href="hpsKrs.php?kode=<?php echo enkripsiurl($data['id_krs'])?>">
+                            <button class="btn btn-danger" onclick="return confirm('yakin dihapus ?')">
+                            Hapus
+                        </button>
+                        </a>
+                    </td>
                      </tr>
                 <?php
                 }
