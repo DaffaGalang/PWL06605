@@ -57,7 +57,34 @@
             <div id="tabelmatkul"></div>
             <!-- <input type="submit" value=""> -->
         </form>
-
+        <table class=" table table-hover table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Kode Mata Kuliah</th>
+            <th>Nama Mata Kuliah</th>
+            <th>Dosen</th>
+            <th>Jam Kuliah</th>
+            <th>SKS</th>
+            <th>Aksi</th>
+        </tr>
+        
+        <?php
+            $sql2 = "select * from krs a join kultawar b on (a.id_jadwal=b.idkultawar) join matkul c on (c.id=b.idmatkul) join dosen d on (b.npp=d.npp) where a.nim='".$_GET['nim']."'";
+            $hasil2 = mysqli_query($koneksi, $sql2);
+            while ($data = mysqli_fetch_assoc($hasil2)) {
+                ?>
+                     <tr>
+                        <td><?php echo $data['id'] ?></td>
+                        <td><?php echo $data['idmatkul'] ?></td>
+                        <td><?php echo $data['namamatkul'] ?></td>
+                        <td><?php echo $data['namadosen'] ?></td>
+                        <td><?php echo $data['hari'], " ", $data['jamkul'] ?></td>
+                        <td><?php echo $data['sks'] ?></td>
+                     </tr>
+                <?php
+                }
+                ?>
+        </table>        
     </div>
     <script>
         $(document).ready(function() {

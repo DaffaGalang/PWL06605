@@ -33,7 +33,7 @@
                             $hasil = search("matkul", "");
                             while ($row = mysqli_fetch_assoc($hasil)) {
                             ?>
-                                <option value=<?= $row["idmatkul"]; ?>><?= $row["namamatkul"] ?></option>
+                                <option value=<?= $row["id"];?>><?= $row["namamatkul"] ?></option>
                             <?php } ?>
                         </select>
                     </div>
