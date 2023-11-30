@@ -81,7 +81,7 @@
                         <td><?php echo $data['hari'], " ", $data['jamkul'] ?></td>
                         <td><?php echo $data['sks'] ?></td>
                         <td> <a href="hpsKrs.php?kode=<?php echo enkripsiurl($data['id_krs'])?>">
-                            <button class="btn btn-danger" onclick="return confirm('yakin dihapus ?')">
+                            <button class="btn btn-primary" onclick="return confirm('yakin dihapus ?')">
                             Hapus
                         </button>
                         </a>
