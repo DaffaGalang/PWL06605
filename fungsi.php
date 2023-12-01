@@ -1,7 +1,7 @@
 <?php
 //membuat koneksi ke database mysql
-//$koneksi = mysqli_connect('192.168.10.253', 'a122106605', 'polke001', 'a122106605');
-$koneksi=mysqli_connect('localhost','root','','pwlgenap2019-akademik');
+$koneksi = mysqli_connect('192.168.10.253', 'a122106605', 'polke001', 'a122106605');
+//$koneksi=mysqli_connect('localhost','root','','pwlgenap2019-akademik');
 
 function enkripsiurl($id)
 {
@@ -31,4 +31,16 @@ function search($table, $where, $key = null)
   }
   $hasil = mysqli_query($GLOBALS['koneksi'], $sql) or die(mysqli_error($GLOBALS['koneksi']));
   return $hasil;
+}
+function generatepdf($size = "A4", $orientation = "Portrait", $html = null, $filename = "doc")
+{
+  require_once __DIR__ . '/vendor/autoload.php';
+
+  $pdf = new \Dompdf\Dompdf();
+
+  $file = file_get_contents($html);
+  $pdf->loadHtml($file);
+  $pdf->setPaper($size, $orientation); //ukuran dan erientation
+  $pdf->render();
+  $pdf->stream($filename . ".pdf", array("Attacment" => FALSE));
 }

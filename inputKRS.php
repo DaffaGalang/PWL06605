@@ -58,39 +58,39 @@
             <!-- <input type="submit" value=""> -->
         </form>
         <table class=" table table-hover table-bordered">
-        <tr>
-            <th>No</th>
-            <th>Kode Mata Kuliah</th>
-            <th>Nama Mata Kuliah</th>
-            <th>Dosen</th>
-            <th>Jam Kuliah</th>
-            <th>SKS</th>
-            <th>Aksi</th>
-        </tr>
-        
-        <?php
-            $sql2 = "select * from krs a join kultawar b on (a.id_jadwal=b.idkultawar) join matkul c on (c.id=b.idmatkul) join dosen d on (b.npp=d.npp) where a.nim='".$_GET['nim']."'";
+            <tr>
+                <th>No</th>
+                <th>Kode Mata Kuliah</th>
+                <th>Nama Mata Kuliah</th>
+                <th>Dosen</th>
+                <th>Jam Kuliah</th>
+                <th>SKS</th>
+                <th>Aksi</th>
+            </tr>
+
+            <?php
+            $sql2 = "select * from krs a join kultawar b on (a.id_jadwal=b.idkultawar) join matkul c on (c.id=b.idmatkul) join dosen d on (b.npp=d.npp) where a.nim='" . $_GET['nim'] . "'";
             $hasil2 = mysqli_query($koneksi, $sql2);
             while ($data = mysqli_fetch_assoc($hasil2)) {
-                ?>
-                     <tr>
-                        <td><?php echo $data['id_krs'] ?></td>
-                        <td><?php echo $data['idmatkul'] ?></td>
-                        <td><?php echo $data['namamatkul'] ?></td>
-                        <td><?php echo $data['namadosen'] ?></td>
-                        <td><?php echo $data['hari'], " ", $data['jamkul'] ?></td>
-                        <td><?php echo $data['sks'] ?></td>
-                        <td> <a href="hpsKrs.php?kode=<?php echo enkripsiurl($data['id_krs'])?>">
+            ?>
+                <tr>
+                    <td><?php echo $data['id_krs'] ?></td>
+                    <td><?php echo $data['idmatkul'] ?></td>
+                    <td><?php echo $data['namamatkul'] ?></td>
+                    <td><?php echo $data['namadosen'] ?></td>
+                    <td><?php echo $data['hari'], " ", $data['jamkul'] ?></td>
+                    <td><?php echo $data['sks'] ?></td>
+                    <td> <a href="hpsKrs.php?kode=<?php echo enkripsiurl($data['id_krs']) ?>">
                             <button class="btn btn-primary" onclick="return confirm('yakin dihapus ?')">
-                            Hapus
-                        </button>
+                                Hapus
+                            </button>
                         </a>
                     </td>
-                     </tr>
-                <?php
-                }
-                ?>
-        </table>        
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
     </div>
     <script>
         $(document).ready(function() {

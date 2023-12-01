@@ -7,7 +7,7 @@
     if(mysqli_num_rows($rs) == 1){
         $sql = "delete from krs where id_krs='".$idKrs."'";
         mysqli_query($koneksi, $sql);
-        header("location:inputKrs.php?nim=".$nim);
+        header("location:inputKRS.php?nim=".$nim);
     } else {
         echo "<script>
                 alert('Hapus Gagal: idKrs = '".$idKrs."' Tidak Ditemukan)
@@ -15,4 +15,3 @@
         
             </script>";
     }
-?>
