@@ -161,6 +161,7 @@
 								<a class="btn btn-outline-primary btn-sm" href="editMhs.php?kode=<?php echo $row['id'] ?>">Edit</a>
 								<a class="btn btn-outline-danger btn-sm" href="hpsMhs.php?kode=<?php echo $row["id"] ?>" id="linkHps" onclick="return confirm('Yakin dihapus nih?')">Hapus</a>
 								<a class="btn btn-outline-primary btn-sm" href="inputKRS.php?nim=<?php echo $row['nim'] ?>">Input KRS</a>
+								<a class="btn btn-secondary btn-sm" href="cetakpdf.php?type=krs&param=<?php echo $row['nim'] ?>">Cetak</a>
 							</td>
 						</tr>
 				<?php

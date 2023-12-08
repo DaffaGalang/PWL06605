@@ -1,7 +1,7 @@
 <?php
 //membuat koneksi ke database mysql
-//$koneksi = mysqli_connect('192.168.10.253', 'a122106605', 'polke001', 'a122106605');
-$koneksi=mysqli_connect('localhost','root','','pwlgenap2019-akademik');
+$koneksi = mysqli_connect('192.168.10.253', 'a122106605', 'polke001', 'a122106605');
+//$koneksi=mysqli_connect('localhost','root','','pwlgenap2019-akademik');
 
 function enkripsiurl($id)
 {
@@ -38,8 +38,7 @@ function generatepdf($size = "A4", $orientation = "Portrait", $html = null, $fil
 
   $pdf = new \Dompdf\Dompdf();
 
-  $file = file_get_contents($html);
-  $pdf->loadHtml($file);
+  $pdf->loadHtml($html);
   $pdf->setPaper($size, $orientation); //ukuran dan erientation
   $pdf->render();
   $pdf->stream($filename . ".pdf", array("Attacment" => FALSE));
