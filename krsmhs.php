@@ -5,7 +5,7 @@ $sql = "SELECT * FROM krs a JOIN kultawar b ON (a.id_jadwal = b.idkultawar) JOIN
 
 $rs = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 $sks = 0;
-$mhs = search("mhs", "nim='".$nim."'");
+$mhs = search("mhs", "nim='".$nim."'", $nim);
 $rsmhs = mysqli_fetch_assoc($mhs);
 $html = "<div style='text-align : center; width:100%;'><h3>KRS Mahasiswa</h3></div>";
 $html .= "<p>NIM :" . $rsmhs["nim"] . "</p>";
