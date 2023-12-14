@@ -5,7 +5,7 @@ $type = $_GET['type'];
 $param = isset($_GET['param']) ? $_GET['param'] : null;
 
 if ($type == 'krs') {
-    header("location:krsmhs?nim=" . $param);
+    header("location:krsmhs.php?nim=" . $param);
     //berlaku untuk php v.8 saja
     //generatepdf(html: "krsmhs.php");
     //php v8 kebawah
