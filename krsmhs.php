@@ -5,10 +5,11 @@ $sql = "SELECT * FROM krs a JOIN kultawar b ON (a.id_jadwal = b.idkultawar) JOIN
 
 $rs = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 $sks = 0;
-$mhs = search("mhs", "");
+$mhs = search("mhs", "nim='".$nim."'");
 $rsmhs = mysqli_fetch_assoc($mhs);
 $html = "<div style='text-align : center; width:100%;'><h3>KRS Mahasiswa</h3></div>";
 $html .= "<p>NIM :" . $rsmhs["nim"] . "</p>";
+$html .= "<p>Nama :" . $rsmhs["nama"] . "</p>";
 $html .= "<table style='border:1px solid black; border-collape: collapse'>
         <thead class='thead-light'>
         <tr style='border:1px solid black;'>
