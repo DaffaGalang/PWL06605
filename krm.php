@@ -7,7 +7,7 @@ $rs = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 $dosen = search("dosen", "npp='" . $npp . "'", $npp);
 $rsdosen = mysqli_fetch_assoc($dosen);
 
-$html = "<div style='text-align : center; width:100%;'><h3>KRS Mahasiswa</h3></div>";
+$html = "<div style='text-align : center; width:100%;'><h3>KRM Dosen</h3></div>";
 $html .= "<p>NPP :" . $rsdosen["npp"] . "</p>";
 $html .= "<p>Nama :" . $rsdosen["namadosen"] . "</p>";
 $html .= "<table style='border:1px solid black; border-collapse: collapse'>
