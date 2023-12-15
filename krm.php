@@ -1,15 +1,15 @@
 <?php
 include "fungsi.php";
 $npp = dekripsiurl($_GET['npp']);
-$sql = "SELECT * FROM kultawaar a JOIN matkul b ON (a.idmatkul=b.id) WHERE a.npp = '" . $npp . "'";
+$sql = "SELECT * FROM kultawar a JOIN matkul b ON (a.idmatkul=b.id) WHERE a.npp = '" . $npp . "'";
 $rs = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 
 $dosen = search("dosen", "npp='" . $npp . "'", $npp);
 $rsdosen = mysqli_fetch_assoc($dosen);
 
 $html = "<div style='text-align : center; width:100%;'><h3>KRS Mahasiswa</h3></div>";
-$html .= "<p>npp :" . $rsmhs["npp"] . "</p>";
-$html .= "<p>Nama :" . $rsmhs["nama"] . "</p>";
+$html .= "<p>NPP :" . $rsdosen["npp"] . "</p>";
+$html .= "<p>Nama :" . $rsdosen["namadosen"] . "</p>";
 $html .= "<table style='border:1px solid black; border-collapse: collapse'>
             <thead class='thead-light'>
             <tr style='border:1px solid black;'>
@@ -32,7 +32,7 @@ while ($row = mysqli_fetch_assoc($rs)) {
             <td style='border:1px solid black;'>" . $row['klp'] . "</td>
             <td style='border:1px solid black;'>" . $row['sks'] . "</td>
             <td style='text-align: center; border:1px solid black;'>" . $row['hari'] . " - " . $row['jamkul'] . "</td>
-            <td style='border:1px solid black;'>" . $row['ruangan'] . "</td>
+            <td style='border:1px solid black;'>" . $row['ruang'] . "</td>
         </tr>";
     $i++;
 }
