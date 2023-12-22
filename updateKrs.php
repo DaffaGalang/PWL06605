@@ -49,9 +49,9 @@
 	// $awalData = ($jmlDataPerHal * $halAktif) - $jmlDataPerHal;
 	if (isset($_POST['cari'])) {
 		$cari = $_POST['cari'];
-		$sql = "select * from krs a JOIN nim b ON (a.nim = b.nim) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim) where thAkd like '%$cari%' or namamatkul like '%$cari%' or nama like '%$cari%'";
+		$sql = "select * from krs a JOIN kultawar b ON (a.id_jadwal = b.idkultawar) JOIN matkul c ON (b.idmatkul=c.id) JOIN mhs d ON (a.nim = d.nim)";
 	} else {
-		$sql = "select * from krs a JOIN nim b ON (a.nim = b.nim) JOIN dosen c ON (a.nppDos=c.npp) JOIN mhs d ON (a.nim=d.nim)";
+		$sql = "select * from krs a JOIN kultawar b ON (a.id_jadwal = b.idkultawar) JOIN matkul c ON (b.idmatkul=c.id) JOIN mhs d ON (a.nim=d.nim)";
 	}
 	$hasil = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
 	$kosong = false;
@@ -108,8 +108,11 @@
 				<tr>
 					<th>ID.</th>
 					<th>NIM Mahasiswa</th>
-					<th>Jadwal</th>
+					<th>Nama Mata kuliah</th>
 					<th style="text-align: center">SKS</th>
+					<th style="text-align: center">Jadwal Hari</th>
+					<th style="text-align: center">Jadwal Jam</th>
+					<th style="text-align: center">Ruang</th>
 					<th>Aksi</th>
 				</tr>
 			</thead>
@@ -133,9 +136,12 @@
 					?>
 						<tr>
 							<td><?php echo $no ?></td>
-							<td style="text-align: left"><?php echo $row["nim"] ?></td>
-							<td style="text-align: center"><?php echo $row["waktu"] ?></td>
+							<td style="text-align: left"><?php echo $row["nama"] ?></td>
+							<td style="text-align: left"><?php echo $row["namamatkul"] ?></td>
 							<td style="text-align: center"><?php echo $row["sks"] ?></td>
+							<td style="text-align: center"><?php echo $row["hari"] ?></td>
+							<td style="text-align: center"><?php echo $row["jamkul"] ?></td>
+							<td style="text-align: center"><?php echo $row["ruang"] ?></td>
 							<td>
 								<a class="btn btn-outline-primary btn-sm" href="editKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>">Edit</a>
 								<a class="btn btn-outline-danger btn-sm" href="hpsKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>" id="linkHps" onclick="return confirm('Yakin Mau Dihapus?')">Hapus</a>

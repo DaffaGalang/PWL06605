@@ -19,7 +19,7 @@ function dekripsiurl($string)
                 alert('NPP yang Diinput Sudah Ada')
                 javascript:history.go(-1)
         
-            </script>";
+          </script>";
   }
 }
 function search($table, $where, $key = null)
