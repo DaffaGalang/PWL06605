@@ -143,8 +143,8 @@
 							<td style="text-align: center"><?php echo $row["jamkul"] ?></td>
 							<td style="text-align: center"><?php echo $row["ruang"] ?></td>
 							<td>
-								<a class="btn btn-outline-primary btn-sm" href="editKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>">Edit</a>
-								<a class="btn btn-outline-danger btn-sm" href="hpsKrs.php?kode=<?php echo enkripsiurl($row['idKrs']) ?>" id="linkHps" onclick="return confirm('Yakin Mau Dihapus?')">Hapus</a>
+								<a class="btn btn-outline-primary btn-sm" href="editKrs.php?kode=<?php echo enkripsiurl($row['id_krs']) ?>">Edit</a>
+								<a class="btn btn-outline-danger btn-sm" href="hpsKrs.php?kode=<?php echo enkripsiurl($row['id_krs']) ?>" id="linkHps" onclick="return confirm('Yakin Mau Dihapus?')">Hapus</a>
 							</td>
 						</tr>
 				<?php
