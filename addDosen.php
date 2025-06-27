@@ -19,7 +19,7 @@
 	<div class="utama">
 		<h2 class="my-3 text-center">Tambah Data Dosen</h2>
 		<div class="alert alert-success alert-dismissible" id="success" style="display:none;">
-			<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+			<a href="#" class="close" data-dismiss="alert" aria-label="close"></a>
 		</div>
 		<form method="post" action="sv_addDosen.php" autocomplete="off">
 			<div class="form-group mb-3">
